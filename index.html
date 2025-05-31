@@ -308,7 +308,7 @@
             layers.forEach(layerClass => {
                 const heart = document.createElement("div");
                 heart.className = "heart";
-                heart.innerText = "♥";
+                
                 
                 const startX = Math.random() * window.innerWidth;
                 heart.classList.add(layerClass);
@@ -337,7 +337,7 @@
         function createRose(initial = false) {
             const rose = document.createElement("div");
             rose.className = "rose";
-            rose.innerText = "♥";
+           
             
             const startX = Math.random() * window.innerWidth;
             const layerClass = getRandomLayer();

@@ -175,7 +175,7 @@ if (audio && audio.paused) {
     let lastTouchX = 0, lastTouchY = 0;
     let lastMouseX = 0, lastMouseY = 0;
     let isDragging = false;
-    const maxTexts = 8;
+    const maxTexts = 12;
     let activeTexts = [];
 
     function checkCollision(newX, newY, newWidth, newHeight) {
@@ -379,9 +379,9 @@ if (audio && audio.paused) {
         createRose(true);
     }
 
-    setInterval(createFallingText, 1000);
+    setInterval(createFallingText, 600);
     setInterval(createHeart, 8500);
-    setInterval(createRose, 700);
+    setInterval(createRose, 2700);
 </script>
 <script>
     const canvas = document.getElementById("star-canvas");

@@ -77,14 +77,14 @@
             opacity: 0.9;
             text-shadow: 0 0 5px rgba(255, 105, 180, 0.8),
                          0 0 10px rgba(255, 105, 180, 0.6);
-            animation: fadeInOut 2s infinite alternate;
+            animation: fadeInOut 9s  alternate;
         }
         .heart {
             color: #ff1493;
             font-size: 5vw;
             opacity: 0.9;
             text-shadow: 0 0 3px #ff1493, 0 0 5px #ff1493;
-            animation: float 4s infinite ease-in-out;
+            animation: float 4s  ease-in-out;
         }
         .rose {
             color: #ff4040;
@@ -92,15 +92,15 @@
             opacity: 0.9;
             transform: rotate(45deg);
             text-shadow: 0 0 3px #ff4040, 0 0 5px #ff4040;
-            animation: float 4s infinite ease-in-out;
+            animation: float 4s  ease-in-out;
         }
         /* Định nghĩa các lớp với độ sâu và kiểu khác nhau */
-        .layer-1 { transform: translateZ(-300px); opacity: 0.8; font-size: 13vw; }
-        .layer-2 { transform: translateZ(-150px); opacity: 0.85; font-size: 14vw; }
-        .layer-3 { transform: translateZ(0px); opacity: 0.9; font-size: 15vw; }
-        .layer-4 { transform: translateZ(150px); opacity: 0.95; font-size: 15vw; }
-        .layer-5 { transform: translateZ(300px); opacity: 1; font-size: 14vw; }
-        .layer-6 { transform: translateZ(200px); opacity: 1; font-size: 13vw; }
+        .layer-1 { transform: translateZ(-300px); opacity: 0.8; font-size: 9vw; }
+        .layer-2 { transform: translateZ(-150px); opacity: 0.85; font-size: 8vw; }
+        .layer-3 { transform: translateZ(0px); opacity: 0.9; font-size: 10vw; }
+        .layer-4 { transform: translateZ(150px); opacity: 0.95; font-size: 9vw; }
+        .layer-5 { transform: translateZ(300px); opacity: 1; font-size: 12vw; }
+        .layer-6 { transform: translateZ(200px); opacity: 1; font-size: 10vw; }
 
         @keyframes fadeInOut {
             from { opacity: 0.9; }
@@ -120,12 +120,11 @@
             .rose {
                 font-size: 5vw;
             }
-            .layer-1 { font-size: 13vw; }
-            .layer-2 { font-size: 14vw; }
-            .layer-3 { font-size: 15vw; }
-            .layer-4 { font-size: 15vw; }
-            .layer-5 { font-size: 14vw; }
-            .layer-6 { font-size: 13vw; }
+            .layer-1 { font-size: 9vw; }
+            .layer-2 { font-size: 8vw; }
+            .layer-3 { font-size: 10vw; }
+            .layer-4 { font-size: 12vw; }
+            .layer-5 { font-size: 10vw; }
             
         }
     </style>
@@ -156,10 +155,9 @@
             
 "Vu Anh Dio",
 "I Love You ♥",
-"Cảm ơn vì em đã xuất hiện♥",
-"♥Đồng ý làm người yêu anh nhé♥",
-"Anh nhớ em nhiều♥",
-"♥",
+"Hong Biết Nói Gì",
+"Thêm Vào",
+"Để Đủ Thôi hể hể",
         ];
 
         const scene = document.getElementById("scene");
@@ -169,7 +167,7 @@
         let lastTouchX = 0, lastTouchY = 0;
         let lastMouseX = 0, lastMouseY = 0;
         let isDragging = false;
-        const maxTexts = 15;
+        const maxTexts = 6;
         let activeTexts = [];
 
         function checkCollision(newX, newY, newWidth, newHeight) {
@@ -286,7 +284,7 @@
             activeTexts.push(text);
 
             let posY = startY;
-            const speed = Math.random() * 1 + 0.5;
+            const speed = Math.random() * 2 + 0.5;
 
             function animate() {
                 posY += speed;
@@ -308,7 +306,7 @@
             layers.forEach(layerClass => {
                 const heart = document.createElement("div");
                 heart.className = "heart";
-                
+                heart.innerText = "♥";
                 
                 const startX = Math.random() * window.innerWidth;
                 heart.classList.add(layerClass);
@@ -337,7 +335,7 @@
         function createRose(initial = false) {
             const rose = document.createElement("div");
             rose.className = "rose";
-           
+            rose.innerText = "♥";
             
             const startX = Math.random() * window.innerWidth;
             const layerClass = getRandomLayer();
@@ -354,7 +352,7 @@
                 posY += speed;
                 rose.style.top = posY + "px";
 
-                if (posY > window.innerHeight + 50) {
+                if (posY > window.innerHeight + 10) {
                     rose.remove();
                 } else {
                     requestAnimationFrame(animateRose);
@@ -373,8 +371,8 @@
             createRose(true);
         }
 
-        setInterval(createFallingText, 500);
-        setInterval(createHeart, 1500);
+        setInterval(createFallingText, 700);
+        setInterval(createHeart, 8500);
         setInterval(createRose, 700);
     </script>
     <script>

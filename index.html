@@ -105,10 +105,10 @@
     /* Định nghĩa các lớp với độ sâu và kiểu khác nhau */
     .layer-1 { transform: translateZ(-300px); opacity: 0.8; font-size: 9vw; }
     .layer-2 { transform: translateZ(-150px); opacity: 0.85; font-size: 8vw; }
-    .layer-3 { transform: translateZ(0px); opacity: 0.9; font-size: 10vw; }
+    .layer-3 { transform: translateZ(0px); opacity: 0.9; font-size: 6vw; }
     .layer-4 { transform: translateZ(150px); opacity: 0.95; font-size: 9vw; }
-    .layer-5 { transform: translateZ(300px); opacity: 1; font-size: 12vw; }
-    .layer-6 { transform: translateZ(200px); opacity: 1; font-size: 10vw; }
+    .layer-5 { transform: translateZ(300px); opacity: 1; font-size: 7vw; }
+    .layer-6 { transform: translateZ(200px); opacity: 1; font-size: 8vw; }
 
     @keyframes fadeInOut {
         from { opacity: 0.9; }
@@ -130,9 +130,9 @@
         }
         .layer-1 { font-size: 9vw; }
         .layer-2 { font-size: 8vw; }
-        .layer-3 { font-size: 10vw; }
-        .layer-4 { font-size: 12vw; }
-        .layer-5 { font-size: 10vw; }
+        .layer-3 { font-size: 6vw; }
+        .layer-4 { font-size: 7vw; }
+        .layer-5 { font-size: 6w; }
         
     }
 </style>
@@ -379,9 +379,9 @@ if (audio && audio.paused) {
         createRose(true);
     }
 
-    setInterval(createFallingText, 250);
-    setInterval(createHeart, 8500);
-    setInterval(createRose, 2700);
+    setInterval(createFallingText, 200);
+    setInterval(createHeart, 7500);
+    setInterval(createRose, 1700);
 </script>
 <script>
     const canvas = document.getElementById("star-canvas");
